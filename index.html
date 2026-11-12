@@ -1,0 +1,614 @@
+
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#100e0c">
+<title>Ілияс ❤️ Дильназ | Wedding Invitation</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+ --gold:#d8b66c;
+ --light:#f6e8c7;
+ --dark:#100e0c;
+ --muted:#c4b28d;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+ margin:0;
+ background:var(--dark);
+ color:var(--light);
+ font-family:'Cormorant Garamond',serif;
+ overflow-x:hidden;
+}
+button,a{font-family:inherit}
+button{cursor:pointer}
+#particles{
+ position:fixed;inset:0;pointer-events:none;
+ z-index:3;overflow:hidden;
+}
+.particle{
+ position:absolute;
+ bottom:-30px;
+ color:#d8b66c;
+ animation:floatUp linear infinite;
+ opacity:0;
+}
+@keyframes floatUp{
+ 0%{transform:translateY(0) rotate(0);opacity:0}
+ 15%{opacity:.8}
+ 85%{opacity:.5}
+ 100%{transform:translateY(-110vh) rotate(360deg);opacity:0}
+}
+#opening{
+ position:fixed;inset:0;z-index:20;
+ display:flex;align-items:center;justify-content:center;
+ padding:22px;
+ background:
+ radial-gradient(ellipse at center,#41321c 0%,#17120c 48%,#080706 100%);
+ perspective:1200px;
+ transition:opacity 1.2s,visibility 1.2s;
+}
+#opening.hide{
+ opacity:0;visibility:hidden;pointer-events:none;
+}
+.opening-box{
+ text-align:center;width:min(430px,100%);
+}
+.crown{
+ font-size:35px;color:var(--gold);
+ margin-bottom:15px;
+}
+.opening-title{
+ font-family:'Great Vibes',cursive;
+ font-size:56px;color:var(--gold);
+ margin:15px 0;
+}
+.opening-sub{
+ letter-spacing:5px;text-transform:uppercase;
+ font-size:13px;color:var(--muted);
+}
+.envelope{
+ width:270px;height:180px;
+ margin:38px auto;
+ position:relative;
+ transform-style:preserve-3d;
+ animation:envelopeFloat 3s ease-in-out infinite;
+ filter:drop-shadow(0 18px 20px #0009);
+}
+@keyframes envelopeFloat{
+ 0%,100%{transform:translateY(0) rotateX(0)}
+ 50%{transform:translateY(-12px) rotateX(5deg)}
+}
+.envelope-back{
+ position:absolute;inset:0;
+ background:#a7864d;
+ border:1px solid #ebd49b;
+}
+.envelope-front{
+ position:absolute;inset:0;
+ background:linear-gradient(145deg,#c8a866,#75552d);
+ clip-path:polygon(0 0,50% 60%,100% 0,100% 100%,0 100%);
+}
+.envelope-flap{
+ position:absolute;inset:0;
+ background:linear-gradient(135deg,#e4c985,#a17a3f);
+ clip-path:polygon(0 0,100% 0,50% 64%);
+ transform-origin:top;
+ transition:transform 1s;
+}
+.seal{
+ position:absolute;top:76px;left:50%;
+ transform:translateX(-50%);
+ width:48px;height:48px;border-radius:50%;
+ background:radial-gradient(circle,#f5dfa5,#a17b37);
+ color:#543916;
+ display:grid;place-items:center;
+ font-family:'Great Vibes',cursive;
+ font-size:25px;
+ box-shadow:0 4px 14px #0008;
+}
+.open-button{
+ padding:14px 32px;
+ border:1px solid var(--gold);
+ background:linear-gradient(135deg,#ebd59c,#a57c3e);
+ color:#1a1309;
+ font-size:18px;
+ letter-spacing:2px;
+ transition:.3s;
+}
+.open-button:hover{
+ transform:scale(1.06);
+ box-shadow:0 0 30px #d8b66c77;
+}
+#main{display:none}
+.hero{
+ min-height:100svh;
+ position:relative;
+ display:flex;
+ align-items:center;
+ justify-content:center;
+ padding:75px 20px;
+ overflow:hidden;
+ background:
+ radial-gradient(ellipse at 50% 45%,#594322 0%,#21180e 38%,#0b0908 78%);
+}
+.hero:before,.hero:after{
+ content:"";
+ position:absolute;
+ width:400px;height:400px;
+ border:1px solid #d8b66c24;
+ border-radius:50%;
+}
+.hero:before{transform:scale(1.5)}
+.hero:after{transform:scale(2)}
+.hero-content{
+ position:relative;z-index:2;
+ width:min(760px,100%);
+ padding:65px 28px;
+ text-align:center;
+ border:1px solid #d8b66c;
+ background:linear-gradient(145deg,#17120de8,#21180de8);
+ box-shadow:0 0 70px #0009,inset 0 0 45px #d8b66c12;
+}
+.corner{
+ position:absolute;width:35px;height:35px;
+ border-color:var(--gold);border-style:solid;
+}
+.tl{top:9px;left:9px;border-width:2px 0 0 2px}
+.tr{top:9px;right:9px;border-width:2px 2px 0 0}
+.bl{bottom:9px;left:9px;border-width:0 0 2px 2px}
+.br{bottom:9px;right:9px;border-width:0 2px 2px 0}
+.eyebrow{
+ letter-spacing:7px;
+ font-size:14px;
+ color:var(--gold);
+ text-transform:uppercase;
+}
+.main-names{
+ font-family:'Great Vibes',cursive;
+ font-size:clamp(65px,12vw,115px);
+ line-height:1.15;
+ color:#efd397;
+ text-shadow:0 0 25px #d8b66c55;
+ margin:30px 0;
+}
+.amp{
+ display:block;font-family:'Playfair Display',serif;
+ font-size:35px;color:#fff1cf;
+ margin:4px;
+}
+.gold-line{
+ width:100px;height:1px;
+ background:var(--gold);margin:27px auto;
+}
+.description{
+ max-width:550px;margin:0 auto;
+ font-size:23px;line-height:1.65;
+ color:#e8ddc6;
+}
+.date-big{
+ font-family:'Playfair Display',serif;
+ font-size:clamp(23px,5vw,36px);
+ color:var(--gold);
+ letter-spacing:3px;
+ margin:25px 0 10px;
+}
+.time-big{
+ font-size:22px;letter-spacing:3px;
+}
+.section{
+ padding:85px 20px;
+ text-align:center;
+ position:relative;
+}
+.section-title{
+ font-family:'Great Vibes',cursive;
+ font-size:55px;color:var(--gold);
+ margin:0 0 20px;
+}
+.section-text{
+ font-size:23px;line-height:1.6;
+ max-width:650px;margin:0 auto;
+ color:#e7ddc7;
+}
+.details-grid{
+ display:grid;
+ grid-template-columns:repeat(3,1fr);
+ gap:15px;
+ max-width:850px;
+ margin:45px auto 0;
+}
+.detail-card{
+ padding:30px 12px;
+ border:1px solid #b99755;
+ background:linear-gradient(145deg,#211a10,#100e0c);
+ transition:.4s;
+}
+.detail-card:hover{
+ transform:translateY(-8px);
+ box-shadow:0 10px 35px #d8b66c25;
+}
+.detail-icon{font-size:32px;color:var(--gold)}
+.detail-label{
+ color:var(--muted);
+ letter-spacing:3px;
+ font-size:13px;
+ margin:12px 0;
+}
+.detail-value{
+ font-family:'Playfair Display',serif;
+ font-size:21px;color:#f0d59a;
+}
+.countdown{
+ display:flex;justify-content:center;
+ gap:14px;flex-wrap:wrap;
+ margin:35px auto;
+}
+.count-box{
+ width:95px;padding:15px 5px;
+ border:1px solid #b99755;
+ background:#1c160f;
+}
+.count-number{
+ display:block;font-size:36px;
+ color:var(--gold);
+ font-family:'Playfair Display',serif;
+}
+.count-label{font-size:15px;color:var(--muted)}
+.map-button,.rsvp-button{
+ display:inline-block;
+ text-decoration:none;
+ padding:14px 25px;
+ margin:12px 5px;
+ color:#171109;
+ background:linear-gradient(135deg,#f1dca7,#ad8441);
+ font-size:19px;
+ transition:.3s;
+}
+.map-button:hover,.rsvp-button:hover{
+ transform:translateY(-4px);
+ box-shadow:0 8px 30px #d8b66c44;
+}
+.rsvp-button{
+ background:transparent;
+ border:1px solid var(--gold);
+ color:var(--gold);
+}
+footer{
+ padding:55px 20px;
+ text-align:center;
+ background:#080706;
+}
+.footer-names{
+ font-family:'Great Vibes',cursive;
+ font-size:52px;color:var(--gold);
+}
+.music{
+ position:fixed;right:18px;bottom:18px;
+ z-index:15;
+ width:48px;height:48px;
+ border-radius:50%;
+ border:1px solid var(--gold);
+ color:var(--gold);
+ background:#21190f;
+ font-size:20px;
+}
+.music.playing{animation:spin 5s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.reveal{
+ opacity:0;transform:translateY(35px);
+ transition:opacity 1s,transform 1s;
+}
+.reveal.visible{opacity:1;transform:translateY(0)}
+@media(max-width:600px){
+ .hero-content{padding:55px 17px}
+ .details-grid{grid-template-columns:1fr}
+ .section{padding:65px 18px}
+ .main-names{font-size:68px}
+ .description{font-size:20px}
+ .eyebrow{letter-spacing:4px}
+ .count-box{width:75px}
+ .count-number{font-size:28px}
+}
+</style>
+</head>
+
+<body>
+
+<div id="particles"></div>
+
+<!-- АШЫЛУ ЭКРАНЫ -->
+<div id="opening">
+ <div class="opening-box">
+  <div class="crown">✦ ❖ ✦</div>
+  <div class="opening-sub">SPECIAL WEDDING INVITATION</div>
+  <div class="opening-title">Ілияс & Дильназ</div>
+  <p style="font-size:19px;color:#e8d5ac">
+   Сізге арналған ерекше шақыру
+  </p>
+
+  <div class="envelope">
+   <div class="envelope-back"></div>
+   <div class="envelope-flap"></div>
+   <div class="envelope-front"></div>
+   <div class="seal">I ♥ D</div>
+  </div>
+
+  <button class="open-button" onclick="openInvite()">
+   ШАҚЫРУДЫ АШУ ✨
+  </button>
+  <p style="font-size:14px;letter-spacing:3px;color:#bca77d;margin-top:25px">
+   20 • 12 • 2026
+  </p>
+ </div>
+</div>
+
+<!-- НЕГІЗГІ ШАҚЫРУ -->
+<main id="main">
+
+<section class="hero">
+ <div class="hero-content">
+  <span class="corner tl"></span>
+  <span class="corner tr"></span>
+  <span class="corner bl"></span>
+  <span class="corner br"></span>
+
+  <div class="eyebrow">THE WEDDING DAY</div>
+  <div style="font-size:35px;color:#d8b66c;margin-top:25px">❖</div>
+
+  <div class="main-names">
+   Ілияс
+   <span class="amp">&</span>
+   Дильназ
+  </div>
+
+  <div class="gold-line"></div>
+
+  <p class="description">
+   Өміріміздің ең әдемі сәттерінің бірінде
+   сізді қуанышымызға ортақ болып,
+   ақ тілегіңізді арнауға шақырамыз!
+  </p>
+
+  <div class="gold-line"></div>
+
+  <div class="eyebrow">SAVE THE DATE</div>
+  <div class="date-big">20 ЖЕЛТОҚСАН 2026</div>
+  <div class="time-big">САҒАТ 18:00</div>
+
+  <div style="font-size:30px;color:#d8b66c;margin-top:35px">
+   ✦ ♡ ✦
+  </div>
+ </div>
+</section>
+
+<section class="section reveal">
+ <h2 class="section-title">Құрметті қонақ!</h2>
+ <p class="section-text">
+  Екі жүректің бір арнаға тоғысқан,
+  махаббаттың жаңа тарихы басталған
+  ерекше күнімізде сізді жанымыздан
+  көргіміз келеді!
+  <br><br>
+  Сіздің қатысуыңыз біз үшін үлкен қуаныш!
+ </p>
+ <div class="gold-line"></div>
+ <div style="font-size:40px;color:#d8b66c">∞</div>
+</section>
+
+<section class="section reveal" style="background:#17120d">
+ <h2 class="section-title">Той салтанаты</h2>
+ <p class="section-text">
+  Бірге өткізетін ең бақытты күнімізде
+  сізді асыға күтеміз!
+ </p>
+
+ <div class="details-grid">
+  <div class="detail-card">
+   <div class="detail-icon">♛</div>
+   <div class="detail-label">КҮНІ</div>
+   <div class="detail-value">20.12.2026</div>
+  </div>
+  <div class="detail-card">
+   <div class="detail-icon">◷</div>
+   <div class="detail-label">УАҚЫТЫ</div>
+   <div class="detail-value">18:00</div>
+  </div>
+  <div class="detail-card">
+   <div class="detail-icon">♧</div>
+   <div class="detail-label">МЕКЕНЖАЙ</div>
+   <div class="detail-value">Ballroom B</div>
+  </div>
+ </div>
+
+ <a class="map-button"
+ href="https://www.google.com/maps/search/?api=1&query=Ballroom+B"
+ target="_blank" rel="noopener">
+  📍 МЕКЕНЖАЙДЫ КӨРУ
+ </a>
+</section>
+
+<section class="section reveal">
+ <h2 class="section-title">Бақытты күнге дейін</h2>
+ <p class="section-text">Біздің ерекше күнімізге қалған уақыт:</p>
+
+ <div class="countdown">
+  <div class="count-box">
+   <span class="count-number" id="days">00</span>
+   <span class="count-label">КҮН</span>
+  </div>
+  <div class="count-box">
+   <span class="count-number" id="hours">00</span>
+   <span class="count-label">САҒАТ</span>
+  </div>
+  <div class="count-box">
+   <span class="count-number" id="minutes">00</span>
+   <span class="count-label">МИНУТ</span>
+  </div>
+  <div class="count-box">
+   <span class="count-number" id="seconds">00</span>
+   <span class="count-label">СЕКУНД</span>
+  </div>
+ </div>
+</section>
+
+<section class="section reveal" style="background:#21190f">
+ <h2 class="section-title">Сізді күтеміз!</h2>
+ <p class="section-text">
+  Қуанышымызға ортақ болып,
+  ақ тілегіңізді білдіруіңізді сұраймыз.
+  <br><br>
+  Қатысатыныңызды төмендегі батырма арқылы растауыңызды өтінеміз.
+ </p>
+
+ <a class="rsvp-button"
+ href="https://wa.me/77779998877?text=%D0%A1%D3%99%D0%BB%D0%B5%D0%BC%D0%B5%D1%82%D1%81%D1%96%D0%B7%20%D0%B1%D0%B5!%20%D0%86%D0%BB%D0%B8%D1%8F%D1%81%20%D0%BF%D0%B5%D0%BD%20%D0%94%D0%B8%D0%BB%D1%8C%D0%BD%D0%B0%D0%B7%D0%B4%D1%8B%D2%A3%20%D2%AF%D0%B9%D0%BB%D0%B5%D0%BD%D1%83%20%D1%82%D0%BE%D0%B9%D1%8B%D0%BD%D0%B0%20%D2%9B%D0%B0%D1%82%D1%8B%D1%81%D0%B0%D1%82%D1%8B%D0%BD%D1%8B%D0%BC%D0%B4%D1%8B%20%D1%80%D0%B0%D1%81%D1%82%D0%B0%D0%B9%D0%BC%D1%8B%D0%BD."
+ target="_blank" rel="noopener">
+  ✓ ҚАТЫСУДЫ РАСТАУ
+ </a>
+</section>
+
+<footer>
+ <div class="footer-names">Ілияс & Дильназ</div>
+ <div class="gold-line"></div>
+ <p style="font-size:18px;color:#c4b28d">
+  Махаббатымыз мәңгілік болсын! ❤️
+ </p>
+ <p style="font-size:13px;letter-spacing:3px;color:#8c7957">
+  WEDDING INVITATION • 2026
+ </p>
+</footer>
+
+</main>
+
+<button class="music" id="musicBtn"
+ onclick="toggleMusic()" title="Музыка">♫</button>
+
+<script>
+// ШАҚЫРУДЫ АШУ
+function openInvite(){
+ document.getElementById('opening').classList.add('hide');
+ document.getElementById('main').style.display='block';
+ document.body.style.overflow='auto';
+ createParticles();
+ startMusic();
+}
+
+// КЕРІ САНАҚ
+const weddingDate = new Date('2026-12-20T18:00:00+05:00').getTime();
+
+function countdown(){
+ const now=Date.now();
+ const distance=weddingDate-now;
+
+ if(distance<=0){
+  document.querySelector('.countdown').innerHTML=
+   '<h2 class="section-title">Бүгін — біздің бақытты күніміз! ❤️</h2>';
+  return;
+ }
+
+ document.getElementById('days').textContent=
+  Math.floor(distance/86400000);
+ document.getElementById('hours').textContent=
+  Math.floor(distance/3600000)%24;
+ document.getElementById('minutes').textContent=
+  Math.floor(distance/60000)%60;
+ document.getElementById('seconds').textContent=
+  Math.floor(distance/1000)%60;
+}
+countdown();
+setInterval(countdown,1000);
+
+// АЛТЫН БӨЛШЕКТЕР
+function createParticles(){
+ const container=document.getElementById('particles');
+ const symbols=['✦','✧','♡','❋','·'];
+
+ for(let i=0;i<35;i++){
+  const el=document.createElement('span');
+  el.className='particle';
+  el.textContent=symbols[Math.floor(Math.random()*symbols.length)];
+  el.style.left=Math.random()*100+'%';
+  el.style.animationDuration=(8+Math.random()*12)+'s';
+  el.style.animationDelay=Math.random()*10+'s';
+  el.style.fontSize=(12+Math.random()*18)+'px';
+  container.appendChild(el);
+ }
+}
+
+// БӨЛІМДЕРДІҢ АНИМАЦИЯСЫ
+const observer=new IntersectionObserver(entries=>{
+ entries.forEach(entry=>{
+  if(entry.isIntersecting){
+   entry.target.classList.add('visible');
+  }
+ });
+},{threshold:.12});
+
+document.querySelectorAll('.reveal').forEach(el=>{
+ observer.observe(el);
+});
+
+// МУЗЫКА — СЫРТҚЫ ФАЙЛСЫЗ ЖҰМЫС ІСТЕЙТІН
+// ЖАЙ ӘУЕНДІ СИНТЕЗАТОР
+let audioContext=null;
+let musicTimer=null;
+let musicOn=false;
+let noteIndex=0;
+
+const notes=[261.63,329.63,392.00,329.63,293.66,349.23,392.00,349.23];
+
+function playNote(){
+ if(!musicOn || !audioContext)return;
+
+ const osc=audioContext.createOscillator();
+ const gain=audioContext.createGain();
+
+ osc.type='sine';
+ osc.frequency.value=notes[noteIndex%notes.length];
+ noteIndex++;
+
+ gain.gain.setValueAtTime(.0001,audioContext.currentTime);
+ gain.gain.exponentialRampToValueAtTime(.045,audioContext.currentTime+.12);
+ gain.gain.exponentialRampToValueAtTime(.0001,audioContext.currentTime+1.5);
+
+ osc.connect(gain);
+ gain.connect(audioContext.destination);
+ osc.start();
+ osc.stop(audioContext.currentTime+1.6);
+}
+
+function startMusic(){
+ if(!audioContext){
+  audioContext=new (window.AudioContext||window.webkitAudioContext)();
+ }
+ if(audioContext.state==='suspended')audioContext.resume();
+
+ if(musicOn)return;
+ musicOn=true;
+ playNote();
+ musicTimer=setInterval(playNote,750);
+ document.getElementById('musicBtn').classList.add('playing');
+ document.getElementById('musicBtn').textContent='♫';
+}
+
+function stopMusic(){
+ musicOn=false;
+ clearInterval(musicTimer);
+ document.getElementById('musicBtn').classList.remove('playing');
+ document.getElementById('musicBtn').textContent='♪';
+}
+
+function toggleMusic(){
+ if(musicOn)stopMusic();
+ else startMusic();
+}
+</script>
+
+</body>
+</html>
